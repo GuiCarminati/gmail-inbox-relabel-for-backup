@@ -2,6 +2,7 @@
 
 This project provides tools to automate Gmail label management for Google Workspace users via the Gmail API, using a Google Cloud service account with domain-wide delegation. It includes scripts to:
 
+- **Read listOfUserEmailsToBeProcessed.txt file**
 - **Rename and nest all user-created labels under a parent label** (the user's email address)
 - **Apply custom labels to all emails and sent emails**
 - **Process multiple users in batch with logging and progress tracking**
@@ -27,6 +28,14 @@ The purpose of these scripts is to nest all emails and labels under a single par
 - **Node.js** (v16+ recommended)
 - **Google Workspace Admin** access (to configure domain-wide delegation)
 - **Google Cloud account** with permissions to create projects and service accounts
+
+## Requisites for running the script
+
+- **Must have a valid serviceAccountKey.json file under /resources/**
+  - A serviceAccountKey.json can be generated following the steps bellow.
+  - To generate a service key, you need admin level access to your Google Workspace's and Google Cloud accounts.
+- **Must have a listOfUserEmailsToBeProcessed.txt file in the root folder with valid email addresses**
+  - The email must be an existing user in the organization the ServiceKey belongs to.
 
 ---
 
