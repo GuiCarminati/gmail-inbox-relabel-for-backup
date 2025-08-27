@@ -58,7 +58,7 @@ function getServiceKeyFileName(){
 // Main function
 async function main() {
   const startTotalTime = performance.now(); // Start total timer
-  const emailList = readEmailsFromFile('./resources/multipleUserEmails.txt');
+  const emailList = readEmailsFromFile('./listOfUserEmailsToBeProcessesed.txt');
   log(`Available emails: ${emailList.join(', ')}`);
   // Prompt user to choose the action to be performed
   const action = await promptUser('Choose an action (1: Rename Labels, 2: Relabel All Emails): ');
