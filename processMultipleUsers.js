@@ -48,8 +48,8 @@ async function promptUser(question) {
 function getServiceKeyFileName(){
   const arg = process.argv[2];
   switch(arg){
-    case 'erin': return 'serviceAccountKey_erin.json';
-    case 'leevin': return 'serviceAccountKey_leevin.json';
+    case 'erin': return 'serviceAccountKey_erin.json'; // key specific to author's companies
+    case 'leevin': return 'serviceAccountKey_leevin.json'; // key specific to author's companies
     default: return 'serviceAccountKey.json';
   }
 }
@@ -58,7 +58,7 @@ function getServiceKeyFileName(){
 // Main function
 async function main() {
   const startTotalTime = performance.now(); // Start total timer
-  const emailList = readEmailsFromFile('./listOfUserEmailsToBeProcessesed.txt');
+  const emailList = readEmailsFromFile('./listOfUserEmailsToBeProcessed.txt');
   log(`Available emails: ${emailList.join(', ')}`);
   // Prompt user to choose the action to be performed
   const action = await promptUser('Choose an action (1: Rename Labels, 2: Relabel All Emails): ');

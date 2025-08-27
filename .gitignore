@@ -1,7 +1,6 @@
-node_modules
-serviceAccountKey_*
+node_modules/
+resources/
 log_*
 desktop.ini
-EnableServiceAccount.lnk
 REMINDERS.md
-listOfUserEmailsToBeProcessesed.txt
+listOfUserEmailsToBeProcessed.txt
