@@ -8,7 +8,7 @@ async function renameAndNestLabels(userEmail, log, jsonkey_file_path) {
   const startDate = new Date(); // Get current date and time
   log(`Started processing ${userEmail} at: ${startDate.toISOString()}`); // Use ISO format for readability
   log(' ');
-  
+
   const auth = new google.auth.GoogleAuth({
     keyFile: jsonkey_file_path,
     scopes: ['https://www.googleapis.com/auth/gmail.labels'],
@@ -37,14 +37,14 @@ async function renameAndNestLabels(userEmail, log, jsonkey_file_path) {
     });
     parentLabelId = createRes.data.id;
   }
-  
+
   log(`Using Parent Label: ${parentLabelName}`);
 
   // System labels to avoid renaming
   const systemLabels = [
     'INBOX', 'SENT', 'DRAFT', 'CHAT', 'SPAM', 'TRASH',
     'IMPORTANT', 'CATEGORY_PERSONAL', 'CATEGORY_SOCIAL',
-    'CATEGORY_PROMOTIONS', 'CATEGORY_UPDATES', 'CATEGORY_FORUMS', 
+    'CATEGORY_PROMOTIONS', 'CATEGORY_UPDATES', 'CATEGORY_FORUMS',
     'UNREAD', 'STARRED'
   ];
 
@@ -73,9 +73,9 @@ async function renameAndNestLabels(userEmail, log, jsonkey_file_path) {
         });
         log(`Renamed label: ${label.name} to ${newLabelName}`);
       } catch (error) {
-        log(error+'label name'+label.name);
+        log(error + 'label name' + label.name);
       }
-      
+
     } else {
       log(`Skipped renaming system label: ${label.name}`);
     }

@@ -4,3 +4,4 @@ log_*
 desktop.ini
 REMINDERS.md
 listOfUserEmailsToBeProcessed.txt
+*.sh

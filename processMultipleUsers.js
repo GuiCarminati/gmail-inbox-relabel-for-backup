@@ -61,8 +61,8 @@ async function main() {
   const emailList = readEmailsFromFile('./listOfUserEmailsToBeProcessed.txt');
   log(`Available emails: ${emailList.join(', ')}`);
   // Prompt user to choose the action to be performed
-  const action = await promptUser('Choose an action (1: Rename Labels, 2: Relabel All Emails): ');
-
+  const skipUserPromt = process.argv[3]=="skip" ? true : false; // if skipping, defaults to runnig full script (option 2)
+  const action = skipUserPromt ? '2' : await promptUser('Choose an action (1: Rename Labels, 2: Relabel All Emails): ');
   
   jsonkey_file_path += getServiceKeyFileName(); // 
 
