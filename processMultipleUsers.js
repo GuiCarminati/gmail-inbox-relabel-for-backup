@@ -46,7 +46,7 @@ async function promptUser(question) {
 }
 
 function getServiceKeyFileName(){
-  const arg = process.argv[2];
+  const arg = process.argv[3];
   switch(arg){
     case 'erin': return 'serviceAccountKey_erin.json'; // key specific to author's companies
     case 'leevin': return 'serviceAccountKey_leevin.json'; // key specific to author's companies
@@ -61,7 +61,7 @@ async function main() {
   const emailList = readEmailsFromFile('./listOfUserEmailsToBeProcessed.txt');
   log(`Available emails: ${emailList.join(', ')}`);
   // Prompt user to choose the action to be performed
-  const skipUserPromt = process.argv[3]=="skip" ? true : false; // if skipping, defaults to runnig full script (option 2)
+  const skipUserPromt = process.argv[2]=="skip" ? true : false; // if skipping, defaults to runnig full script (option 2)
   const action = skipUserPromt ? '2' : await promptUser('Choose an action (1: Rename Labels, 2: Relabel All Emails): ');
   
   jsonkey_file_path += getServiceKeyFileName(); // 
