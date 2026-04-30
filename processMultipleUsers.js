@@ -46,12 +46,7 @@ async function promptUser(question) {
 }
 
 function getServiceKeyFileName(){
-  const arg = process.argv[3];
-  switch(arg){
-    case 'erin': return 'serviceAccountKey_erin.json'; // key specific to author's companies
-    case 'leevin': return 'serviceAccountKey_leevin.json'; // key specific to author's companies
-    default: return 'serviceAccountKey.json';
-  }
+  return 'serviceAccountKey.json';
 }
 
 
