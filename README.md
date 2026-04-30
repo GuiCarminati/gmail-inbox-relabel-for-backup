@@ -34,8 +34,9 @@ The purpose of these scripts is to nest all emails and labels under a single par
 - **Must have a valid serviceAccountKey.json file under /resources/**
   - A serviceAccountKey.json can be generated following the steps bellow.
   - To generate a service key, you need admin level access to your Google Workspace's and Google Cloud accounts.
-- **Must have a listOfUserEmailsToBeProcessed.txt file in the root folder with valid email addresses** (for processing multiple email addresses, separate them with commas, with no spaces or page breaks)
+- **Must have a listOfUserEmailsToBeProcessed.txt file in the root folder with valid email addresses**
   - The email must be an existing user in the organization the ServiceKey belongs to.
+  - For processing multiple email addresses, separate them with commas, with no spaces or page breaks
 
 ---
 
